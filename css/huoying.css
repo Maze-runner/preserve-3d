@@ -1,0 +1,69 @@
+body{
+    transform-style: preserve-3d;
+    perspective: 2000px;
+}
+.parent{
+    transform-style: preserve-3d;
+    animation: container 10s ease-out infinite running;
+    -webkit-animation: container 10s ease-out infinite running;
+    -moz-animation: container 10s ease-out infinite running;
+    -o-animation: container 10s ease-out infinite running;
+    /* background: #e43; */
+}
+.parent:hover{
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+.container{
+    width: 800px;
+    height: 700px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    position: relative;
+    animation: moveImg 10s linear infinite running;
+    -webkit-animation: moveImg 10s linear infinite running;
+    -moz-animation: moveImg 10s linear infinite running;
+    -o-animation: moveImg 10s linear infinite running;
+}
+.container:hover{
+    animation-play-state: paused;
+}
+img {
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+}
+.img1{
+    transform: translateZ(150px);
+}
+.img2{
+    transform: rotateY(90deg) translateZ(150px);
+}
+.img3{
+    transform: rotateY(180deg) translateZ(150px);
+}
+.img4{
+    transform: rotateY(270deg) translateZ(150px);
+}
+
+@keyframes moveImg {
+    0%{
+        transform: rotateY(0deg);
+    }
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+@keyframes container {
+    0%{
+        transform: rotate3D(0,0,0,0deg);
+    }
+    100%{
+        transform: rotate3D(1,1,1,360deg);
+    }
+}
+
+
